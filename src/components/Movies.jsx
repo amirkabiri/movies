@@ -31,8 +31,8 @@ class Movies extends Component{
         return movies.map((movie)=>{
             const{_id,title,genre,numberInStock,dailyRentalRate}=movie;
             return(
-                <>
-                    <tr key={_id}>
+                <React.Fragment  key={_id}>
+                    <tr>
                         <td>{title}</td>
                         <td>{genre.name}</td>
                         <td>{numberInStock}</td>
@@ -40,7 +40,7 @@ class Movies extends Component{
                         <td><Like liked={movie.liked} onClick={()=>this.handleLike(movie)}> </Like></td>
                         <td> <button className="btn btn-danger" onClick={()=>this.handleDelete(movie)}> Delete </button></td>
                     </tr>
-                </>
+                </React.Fragment>
             )
             }
         )
